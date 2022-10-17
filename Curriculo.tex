@@ -1,0 +1,199 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{João Pedro Schio Ortega} \\[7.5pt]
+\href{https://github.com/Joao-Schio}{\raisebox{-0.05\height}\faGithub\ Joao-Schio} \ $|$ \ 
+\href{https://www.linkedin.com/in/joao-ortega-80983a253}{\raisebox{-0.05\height}\faLinkedin\ Joao-Ortega} \ $|$ \ 
+\href{jp@santoandrea.com.br}{\raisebox{-0.05\height}\faEnvelope \ jp@santoandrea.com.br} \ $|$ \ 
+\href{tel:+55 (67) 981836565}{\raisebox{-0.05\height}\faMobile \ +55 (67) 981836565} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+
+%Experience
+\section{Experiências}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{Procurando o primeiro emprego}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Designação} & \hfill  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Habilidades com programação em Python3, C,Java.
+     
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+%Projects
+\section{Projetos em sala de aula}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Alguns projetos} & \hfill \href{https://github.com/Joao-Schio/T2}{Link dos fontes} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Algoritmos e Programação 2, estudo de uma função de tempo fibonacci, recursiva e iterativa}  \\
+\textbf{Projetos em desenvolvimento} \\ {Trabalho em equipe de uma sala, construir um programa em Java, que seja o jogo UNO} & \hfill \href{https://github.com/Joao-Schio/UnoOO}{Link dos fontes} 
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Educação}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+
+2005 - 2017 Escola GAPPE (Grupo Associado de Professores Pela Educação) \\
+
+2018 - 2020 Ensino médio Colégio Novaescola\\
+
+2018 - FCE (First Certificate in English) de  \textbf{Cambridge} \\
+
+
+2019 - CAE (Certificate in Advanced English)  de  \textbf{Cambridge} \\
+
+2020 - Intercâmbio de aprendizado Canadá   de  \textbf{ELS Vancouver} \hfill  (30 dias) \\
+
+2021 - presente Faculdade Federal de Mato Grosso do Sul (UFMS) (Engenharia de Computação (4 semestre)) \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Habilidades}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Algumas habidades &  \normalsize{Matemática, lógica e línguas}\\
+\normalsize{Pacote Office (Excel, Word)}\\ 
+\normalsize{Linux (Fedora, Arch e Ubuntu)}  \\
+Outras habilidades  &  \normalsize{ Java, Python, C}\\ 
+\href{https://www.latex-project.org/}{\LaTeX} (Ferramenta de criação de PDF) - Esse curriculo
+\end{tabularx}
+
+\vfill
+\center{\footnotesize Última atualização: \today}
+
+\end{document}
